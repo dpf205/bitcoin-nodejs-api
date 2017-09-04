@@ -13,6 +13,7 @@
   "dependencies": {
     "bitcore-lib": "^0.14.0",
     "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
     "request": "^2.81.0"
   }

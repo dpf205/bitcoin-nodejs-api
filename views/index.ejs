@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Create Brain Wallet</title>
+</head>
+<body>
+	<p>Last Price: $<%= last_price %> per BTC</p>
+	<p>Bid Price: $<%= bid_price %> per BTC</p>
+	<p>Ask Price: $<%= ask_price %> per BTC</p>
+	<p>Spread: $<%= spread %></p><br>
+    <h4>Enter username to retrieve Brain Wallet Info</h4>
+	
+	<hr>
+   <form method="POST" action="/create-bitcore-wallet">
+   	<input type="text" name="brainsrc">
+   	<input type="submit" value="Go">
+   </form>
+</body>
+</html>

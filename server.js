@@ -12,9 +12,26 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+app.set("view engine", "ejs");
+
 
 app.get('/', function(req,res){
-	res.sendFile(__dirname + '/index.html');
+
+	request({
+ 	   url:"https://blockchain.info/ticker?format=json",
+ 	   json: true
+    }, function(error, response, body){
+
+		var buyPrice = body.USD.buy;
+		var sellPrice = body.USD.sell;
+		var spreadDiff = buyPrice - sellPrice;
+		var spread = spreadDiff.toFixed(2);
+
+		res.render('index', {last_price: body.USD.last, bid_price: body.USD.buy, ask_price: body.USD.sell, spread: spread});
+
+    });
+
+
 });
 
 app.post('/create-bitcore-wallet', function(req,res){
