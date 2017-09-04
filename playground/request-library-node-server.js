@@ -12,6 +12,6 @@ http.createServer(function (req, res){
 	   console.log(body.market_price_usd);
    });
 	console.log("this is a new bitcoin user" + req.url);
-	res.end("more bitcoin stuff");
+	res.end("more bitcoin info");
 
 }).listen(port);
