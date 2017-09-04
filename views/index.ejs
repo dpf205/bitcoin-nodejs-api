@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-	<title>Create Brain Wallet</title>
-</head>
+   <% include  head %>
 <body>
-	<p>Last Price: $<%= last_price %> per BTC</p>
-	<p>Bid Price: $<%= bid_price %> per BTC</p>
-	<p>Ask Price: $<%= ask_price %> per BTC</p>
-	<p>Spread: $<%= spread %></p><br>
-    <h4>Enter username to retrieve Brain Wallet Info</h4>
-	
-	<hr>
+	<% include  header %>
+
+	<div class="container">
+	  <div class="row">
+	    <div class="col-md-6"><% include  btc-data %></div>
+	    <div class="col-md-6"><% include  enter-user-form %></div>
+	  </div>
+	</div>
+
+	<!--
    <form method="POST" action="/create-bitcore-wallet">
    	<input type="text" name="brainsrc">
    	<input type="submit" value="Go">
-   </form>
+   </form> -->
 </body>
 </html>
