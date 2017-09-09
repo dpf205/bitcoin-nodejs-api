@@ -35,11 +35,6 @@ app.get('/', function(req, res) {
 	});
 });
 
-// app.get('/brain', function(req,res){
-// 	res.render('brain', {
-// 		pageTitle: "Brain"
-// 	})
-// });
 
 app.get('/converter', function(req,res){
 
@@ -57,7 +52,7 @@ app.get('/converter', function(req,res){
 
 
 
-app.post('/create-bitcore-wallet', function(req, res) {
+app.post('/check-bitcore-wallet', function(req, res) {
 
 	// console.log(brainsrc);
 
@@ -78,17 +73,17 @@ app.post('/create-bitcore-wallet', function(req, res) {
 	}, function(error, response, body) {
 
 		// console.log(body)
-		res.send('This is the brain wallet of ' + '<b>' + brainsrc + '</b>' +
-			'<br>Address: ' + address +
-			'<br>Private Key Hash: ' + privateKey +
-			'<br> Total Received: ' + body.total_received +
-			'<br> Total Sent: ' + body.total_sent +
-			'<br> Number of Transactions: ' + body.n_tx +
-			'<br> Final Balance: ' + body.final_balance
-		);
-	})
-
-
+		res.render('brain-wallet-info',{
+			pageTitle: "Brain Wallet Info",
+			brainsrc: brainsrc,
+			address: address,
+			privateKey: privateKey,
+			total_received: body.total_received.toFixed(2),
+			total_sent: body.total_sent.toFixed(2),
+			num_trans: body.n_tx,
+			final_balance: body.final_balance.toFixed(2)
+		})
+	});
 });
 
 app.listen(port, function() {

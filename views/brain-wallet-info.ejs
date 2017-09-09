@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <% include  head %>
+<body>
+	<% include  header %>
+
+<div class="col-sm-6 col-sm-offset-3">
+<div class="panel panel-primary">
+	<div class="panel-heading">
+ 	 <h3 class="panel-title text-center">Username</h3>
+    </div>
+	<div class="panel-body text-center">
+	  <p><%= brainsrc %> </p>
+	</div>
+</div>
+</div>
+
+	<div class="container"  style='margin-top: 60px;'>
+	  <div class="row">
+		  <div class="col-md-6">
+		  <div class="panel panel-primary">
+  		  <div class="panel-heading">
+  			<h3 class="panel-title text-center">Brain Wallet Address</h3>
+  		  </div>
+  		  <div class="panel-body text-center">
+  			<p><%= address %> </p>
+  		  </div>
+  		</div>
+		</div>
+
+		<div class="col-md-6">
+		<div class="panel panel-primary">
+		<div class="panel-heading">
+		  <h3 class="panel-title text-center">Private Key</h3>
+		</div>
+		<div class="panel-body text-center">
+		  <p><%= privateKey %></p>
+		</div>
+	  </div>
+	  </div>
+
+	  <div class="col-md-6">
+	  <div class="panel panel-primary">
+	  <div class="panel-heading">
+		<h3 class="panel-title text-center">Total Received</h3>
+	  </div>
+	  <div class="panel-body text-center">
+		<p>$<%= total_received %></p>
+	  </div>
+	</div>
+	</div>
+
+	<div class="col-md-6">
+	<div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h3 class="panel-title text-center">Total Sent</h3>
+	</div>
+	<div class="panel-body text-center">
+	  <p>$<%= total_sent %></p>
+	</div>
+  </div>
+  </div>
+
+  <div class="col-md-6">
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+	<h3 class="panel-title text-center">Number of Transactions</h3>
+  </div>
+  <div class="panel-body text-center">
+	<p><%= num_trans %></p>
+  </div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+  <h3 class="panel-title text-center">Final Balance</h3>
+</div>
+<div class="panel-body text-center">
+  <p>$<%= final_balance %></p>
+</div>
+</div>
+</div>
+
+	  </div>
+	</div>
+
+
+</body>
+</html>
