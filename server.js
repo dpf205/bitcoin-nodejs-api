@@ -9,9 +9,7 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-
 app.use(bodyParser.json());
-
 app.set("view engine", "ejs");
 
 
@@ -34,11 +32,30 @@ app.get('/', function(req, res) {
 			ask_price: body.USD.sell,
 			spread: spread
 		});
-
 	});
-
-
 });
+
+// app.get('/brain', function(req,res){
+// 	res.render('brain', {
+// 		pageTitle: "Brain"
+// 	})
+// });
+
+app.get('/converter', function(req,res){
+
+	request({
+		url: "https://blockchain.info/ticker?format=json",
+		json: true
+	}, function(error, response, body) {
+
+		res.render('converter', {
+			pageTitle: "BTC/USD or USD/BTC",
+			last_price: body.USD.last
+		});
+	});
+});
+
+
 
 app.post('/create-bitcore-wallet', function(req, res) {
 
