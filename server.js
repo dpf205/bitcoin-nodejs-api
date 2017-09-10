@@ -37,16 +37,14 @@ app.get('/', function(req, res) {
 
 
 app.get('/converter', function(req,res){
-
 	request({
 		url: "https://blockchain.info/ticker?format=json",
 		json: true
 	}, function(error, response, body) {
-
-		res.render('converter', {
-			pageTitle: "BTC/USD or USD/BTC",
-			last_price: body.USD.last
-		});
+			res.render('converter', {
+				pageTitle: "BTC/USD or USD/BTC",
+				last_price: body.USD.last
+			});
 	});
 });
 
